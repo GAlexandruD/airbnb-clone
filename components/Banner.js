@@ -6,6 +6,7 @@ function Banner() {
       <Image
         src="https://a0.muscache.com/im/pictures/57b9f708-bb12-498c-bc33-769f8fc43e63.jpg"
         layout="fill"
+        alt="banner"
         objectFit="cover"
       />
       <div className="absolute top-1/2 w-full text-center">
