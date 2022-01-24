@@ -22,8 +22,6 @@ function Map({ searchResults }) {
     zoom: 11,
   });
 
-  console.log("Mapbox Key is: ", process.env.mapbox_key);
-
   return (
     <ReactMapGL
       mapboxApiAccessToken={process.env.mapbox_key}
