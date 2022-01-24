@@ -3,10 +3,10 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { format } from "date-fns";
 import InfoCard from "../components/InfoCard";
+import Map from "../components/Map";
 
 function Search({ searchResults }) {
   const router = useRouter();
-  console.log("searchResults are: ", searchResults);
 
   const { location, startDate, endDate, noOfGuests } = router.query;
 
@@ -50,6 +50,11 @@ function Search({ searchResults }) {
               )
             )}
           </div>
+        </section>
+
+        <section className="hidden xl:inline-flex xl:min-w-[600px] h-full">
+          <h1 className="bg-yellow-700 h-52 w-52">MAP SHOULD BE DOWN HERE!</h1>
+          <Map searchResults={searchResults} className="bg-red-400 h-52 w-52" />
         </section>
       </main>
 
