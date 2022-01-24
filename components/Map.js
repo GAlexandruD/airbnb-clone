@@ -19,8 +19,10 @@ function Map({ searchResults }) {
     height: "100%",
     latitude: center.latitude,
     longitude: center.longitude,
-    zoom: 8,
+    zoom: 11,
   });
+
+  console.log("Mapbox Key is: ", process.env.mapbox_key);
 
   return (
     <ReactMapGL

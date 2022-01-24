@@ -45,6 +45,7 @@ export default function Header({ placeholder }) {
         noOfGuests: noOfGuests,
       },
     });
+    setSearchInput("");
   };
 
   return (
@@ -63,7 +64,7 @@ export default function Header({ placeholder }) {
         />
       </div>
 
-      {/* Middle - Search min55 */}
+      {/* Middle - Search */}
       <div className=" flex items-center md:border-2 rounded-full py-2 md:shadow-sm ">
         <input
           value={searchInput}
@@ -72,7 +73,10 @@ export default function Header({ placeholder }) {
           type="text"
           placeholder={placeholder || "Start your search..."}
         />
-        <SearchIcon className=" hidden md:inline-flex h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer md:mx-2 shrink-0" />
+        <SearchIcon
+          onClick={search}
+          className=" hidden md:inline-flex h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer md:mx-2 shrink-0"
+        />
       </div>
 
       {/* Right */}
@@ -88,12 +92,19 @@ export default function Header({ placeholder }) {
       {searchInput && (
         <div className="flex flex-col col-span-3 mx-auto">
           <DateRangePicker
+            staticRanges={[]}
+            inputRanges={[]}
+            renderStaticRangeLabel={false}
+            weekStartsOn={1}
+            showSelectionPreview={false}
+            months={2}
+            direction={"horizontal"}
             ranges={[selectionRange]}
             minDate={new Date()}
             rangeColors={["#FD5B61"]}
             onChange={handleSelect}
           />
-          <div className="flex items-center border-b mb-4">
+          <div className="flex items-center border-b mb-4 ml-60">
             <h2 className="text-2xl pl-2 flex-grow font-semibold">
               Number of Guests
             </h2>
@@ -107,11 +118,17 @@ export default function Header({ placeholder }) {
             />
           </div>
 
-          <div className="flex">
-            <button onClick={resetInput} className="flex-grow text-gray-500">
+          <div className="flex ml-60">
+            <button
+              onClick={resetInput}
+              className="flex-grow text-gray-500 hover:text-gray-700 hover:font-medium bg-slate-200 rounded-full w-5 h-10 mr-20"
+            >
               Cancel
             </button>
-            <button onClick={search} className="flex-grow text-red-400">
+            <button
+              onClick={search}
+              className="flex-grow text-red-400 hover:text-red-700 hover:font-medium bg-slate-200 rounded-full w-5 h-10 ml-20 "
+            >
               Search
             </button>
           </div>

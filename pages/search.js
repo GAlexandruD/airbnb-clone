@@ -18,7 +18,7 @@ function Search({ searchResults }) {
     <div className="h-screen">
       <Header placeholder={`${location} | ${range} | ${noOfGuests} guests`} />
 
-      <main>
+      <main className="flex">
         <section className="flex-grow pt-14 px-6">
           <p className="text-xs">
             300+ Stays - {range} - for {noOfGuests} guests
@@ -52,9 +52,8 @@ function Search({ searchResults }) {
           </div>
         </section>
 
-        <section className="hidden xl:inline-flex xl:min-w-[600px] h-full">
-          <h1 className="bg-yellow-700 h-52 w-52">MAP SHOULD BE DOWN HERE!</h1>
-          <Map searchResults={searchResults} className="bg-red-400 h-52 w-52" />
+        <section className="hidden xl:inline-flex xl:min-w-[600px] ">
+          <Map searchResults={searchResults} />
         </section>
       </main>
 

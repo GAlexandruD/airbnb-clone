@@ -37,7 +37,7 @@ export default function Home({ exploreData, cardsData }) {
 
         <section>
           <h2 className="text-4xl font-semibold py-8">Live Anywhere</h2>
-          <div className=" flex space-x-3 overflow-x-auto p-3 -ml-3">
+          <div className="flex space-x-3 overflow-x-auto p-3 -ml-3 hover:scroll-auto">
             {cardsData?.map((item) => (
               <MediumCard key={item.img} img={item.img} title={item.title} />
             ))}
